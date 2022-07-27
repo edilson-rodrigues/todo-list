@@ -1,0 +1,29 @@
+.header {
+    background: var(--gray-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.5rem;
+}
+
+.container img {
+    height: 2.5rem;
+    padding-right: 12px;
+}
+
+.container strong {
+    color: var(--blue);
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.container strong:last-child {
+    color: var(--purple-dark);
+}
+
+.container {
+    display: flex;
+    align-items: flex-end;
+    height: 3rem;
+}
