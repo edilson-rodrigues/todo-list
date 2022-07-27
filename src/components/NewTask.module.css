@@ -1,0 +1,41 @@
+.article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article header {
+    margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.article input {
+    width: 40rem;
+    padding: 1rem;
+
+    background-color: var(--gray-500);
+    color: var(--white);
+
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+
+    margin-right: 0.5rem;
+}
+
+.article button {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.article button span {
+    vertical-align: middle;
+}
+
+.article button svg {
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
