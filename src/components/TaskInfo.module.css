@@ -1,0 +1,21 @@
+.taskInfo span {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.taskInfo+.taskInfo span {
+    color: var(--purple);
+}
+
+.taskInfo span:last-child {
+    font-size: 0.75rem;
+
+    color: var(--grey-200);
+    background-color: var(--grey-400);
+
+    border-radius: 8px;
+
+    margin-left: 0.5rem;
+    padding: 2px 8px;
+}

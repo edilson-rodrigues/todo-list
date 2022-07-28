@@ -3,14 +3,14 @@ import styles from './NewTask.module.css';
 
 export function NewTask() {
     return (
-        <article className={styles.article}>
-            <header>
+        <div className={styles.newTask}>
+            <header className={styles.wrapper}>
                 <input type="text" placeholder="Adicione uma nova tarefa" />
                 <button>
                     <span>Criar</span>
-                    <PlusCircle size='1.25rem' />
+                    <PlusCircle size='1rem' />
                 </button>
             </header>
-        </article>
+        </div>
     )
 }
