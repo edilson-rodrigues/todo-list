@@ -1,7 +1,11 @@
-.task header {
+.tasks header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.taskItem {
+    margin-top: 24px;
 }
 
 .noTask {
