@@ -18,3 +18,23 @@ Apesar de serem poucas funcionalidades, você vai precisar relembrar conceitos c
 - Componentização
 
 Para completar esse desafio, você pode necessitar de pesquisas para aprender sobre métodos de manipulação de arrays como map, filter  ou até mesmo reduce. 
+
+## ambiente desktop
+- [vscode](https://code.visualstudio.com/download)
+- [nodejs](https://nodejs.org/en/download/) 
+- [npm](https://www.npmjs.com/package/npm)
+
+## como executar
+*instalar dependência*
+```cm
+➜  ~ npm i
+```
+*executar projeto*
+```cm
+➜  ~ npm run dev 
+```
+
+*acessar a rota dev no browser*
+```cmd
+ ➜  Local:   http://127.0.0.1:3000/
+```
