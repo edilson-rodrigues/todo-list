@@ -9,13 +9,13 @@ interface TaskInfoProps {
 export function TaskInfo({
     title,
     taskCount = 0,
-    completedTaskCount = 0,
+    completedTaskCount,
 
 }: TaskInfoProps) {
     return (
         <div className={styles.taskInfo}>
             <span className={styles.purple}>{title}</span>
-            {completedTaskCount > 0
+            {completedTaskCount != null
                 ? (
                     <span>{completedTaskCount} de {taskCount}</span>
                 )

@@ -5,7 +5,6 @@ import styles from './Tasks.module.css';
 import clipboard from '../assets/clipboard-icon.svg';
 import { TaskItem } from './TaskItem';
 
-
 interface ITask {
     id: string;
     label: string;
@@ -13,21 +12,17 @@ interface ITask {
 }
 
 interface TasksProps {
-    tasks: ITask[]
+    tasks: ITask[],
+    onDelete: (taskId: string) => void,
+    onComplete: (taskId: string) => void,
 };
 
-
-export function Tasks({ tasks }: TasksProps) {
+export function Tasks({ tasks, onDelete, onComplete }: TasksProps) {
     const createdTaskCount = tasks.length;
 
     const completedTaskCount = tasks.reduce((total, task) => {
         return task.isChecked ? total + 1 : total;
     }, 0);
-
-    console.log(tasks);
-    console.log(completedTaskCount);
-
-    function deleteTask(){}
 
     return (
         <article className={styles.tasks}>
@@ -55,9 +50,15 @@ export function Tasks({ tasks }: TasksProps) {
             </>
             <div className={styles.taskItem}>
                 {tasks.map(task => {
-                    return (<TaskItem label={task.label} />)
+                    return (
+                        <TaskItem
+                            key={task.id}
+                            task={task}
+                            onDelete={onDelete}
+                            onComplete={onComplete}
+                        />
+                    )
                 })}
-
             </div>
         </article>
     );

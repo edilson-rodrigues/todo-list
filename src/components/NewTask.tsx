@@ -1,5 +1,7 @@
 import { PlusCircle } from 'phosphor-react';
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import styles from './NewTask.module.css';
 
 interface ITask {
@@ -30,7 +32,7 @@ export function NewTask({ onCreate }: NewTaskProps) {
         event.preventDefault();
 
         const task: ITask = {
-            id: '1',
+            id: uuidv4(),
             label: newTaskText,
             isChecked: false,
         };
@@ -48,6 +50,8 @@ export function NewTask({ onCreate }: NewTaskProps) {
         event.target.setCustomValidity('Esse campo é obrigatório!');
     }
 
+    const isNewTaskEmpty = newTaskText.length === 0;
+
     return (
         <div
             className={styles.newTask}
@@ -62,7 +66,10 @@ export function NewTask({ onCreate }: NewTaskProps) {
                     onInvalid={handleNewTaskInvalid}
                     required
                 />
-                <button type="submit">
+                <button
+                    type="submit"
+                    disabled={isNewTaskEmpty}
+                >
                     <span>Criar</span>
                     <PlusCircle size='1rem' />
                 </button>

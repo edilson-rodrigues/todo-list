@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { Header } from './components/Header';
 import { NewTask } from './components/NewTask';
@@ -29,6 +29,17 @@ export default function App() {
     setTasks(tasksWithoutDeleteOne);
   }
 
+  function taskCompleted(taskId: string) {
+    const taskIsChecked = tasks.filter((task) => {
+      if (task.id == taskId) {
+        task.isChecked = !task.isChecked;
+      }
+      return task;
+    });
+
+    setTasks(taskIsChecked);
+  }
+
   return (
     <div>
       <Header />
@@ -39,7 +50,8 @@ export default function App() {
         <main>
           <Tasks
             tasks={tasks}
-            /* onDelete={deleteTask} */
+            onDelete={deleteTask}
+            onComplete={taskCompleted}
           />
         </main>
       </div>
